@@ -9,11 +9,13 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: BooksLayout,
+      childen: [],
     },
     {
       path: '/novels',
       name: 'novels',
       component: NovelsLayout,
+      childen: [],
     },
 
     // {
