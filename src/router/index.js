@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import NovelDashBoardLayout from '@/layouts/NovelDashBoardLayout.vue'
+import NovelsLayout from '@/layouts/NovelsLayout.vue'
+import BooksLayout from '@/layouts/BooksLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      name: 'home',
+      component: BooksLayout,
+    },
+    {
       path: '/novels',
       name: 'novels',
-      component: NovelDashBoardLayout,
+      component: NovelsLayout,
     },
 
     // {

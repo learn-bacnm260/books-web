@@ -14,21 +14,20 @@ import { RouterLink } from 'vue-router';
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
           Books
         </RouterLink>
-        <RouterLink to="/">
-          <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          Mangas
-        </RouterLink>
-        <RouterLink to="/">
-          <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          Novels
-        </RouterLink>
       </div>
 
       <div class="tool-bar">
         <input class="search-input" type="text" placeholder="Search..." />
-        <button class="button-search"></button>
-        <button class="button-user-profile"></button>
-        <button class="button-settings"></button>
+        <button class="button-search">
+          <img alt="Search icon" class="icon" src="@/assets/icons/search-icon.svg" />
+        </button>
+
+        <button class="button-user-profile">
+          <img alt="User profile icon" class="icon" src="@/assets/icons/user-profile-icon.svg" />
+        </button>
+        <button class="button-settings">
+          <img alt="Settings icon" class="icon" src="@/assets/icons/settings-icon.svg" />
+        </button>
       </div>
 
     </header>
@@ -52,6 +51,8 @@ import { RouterLink } from 'vue-router';
   grid-template-rows: 2fr 18fr;
   grid-template-columns: 1fr;
 
+  border-radius: 10px;
+  overflow: hidden;
   /* grid-template-areas: ; */
 }
 
@@ -64,7 +65,8 @@ import { RouterLink } from 'vue-router';
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10 10 0 0;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -77,7 +79,6 @@ import { RouterLink } from 'vue-router';
   justify-content: space-around;
   align-items: stretch;
   background-color: #202636FF;
-  border-radius: 10 10 0 0;
 }
 
 .menu-nav a {
@@ -91,24 +92,44 @@ import { RouterLink } from 'vue-router';
 .tool-bar {
   width: 100%;
 
-  flex: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr min-content min-content;
   grid-template-rows: 1fr;
-  align-items: stretch;
+  align-items: center;
 
+}
+
+
+.tool-bar .search-input {
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 20px;
+  border-radius: 30px;
+  border: solid 0.5px gray;
+  outline: none;
+
+  box-sizing: border-box;
 }
 
 .tool-bar button {
 
-  align-self: stretch;
-  height: 100%;
+  height: 40px;
   aspect-ratio: 1 / 1;
 
-  /* margin: 5px; */
+  margin: 5px;
+  margin-right: 10px;
   border-radius: 50%;
+  border: solid 0.5px gray;
+
   background-color: rgb(226, 228, 236);
+
 }
+
+.tool-bar .button-search {
+  height: 30px;
+}
+
 
 .dashboard-main {
   grid-column: 1 / 2;
@@ -121,4 +142,16 @@ import { RouterLink } from 'vue-router';
   width: 20%;
   height: 20%;
 } */
+
+
+@media screen and (max-width: 400px) {
+  .tool-bar {
+    grid-template-columns: 1fr min-content min-content;
+  }
+
+  .tool-bar .search-input {
+    display: none;
+  }
+
+}
 </style>
