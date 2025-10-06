@@ -33,7 +33,7 @@ import { RouterLink } from 'vue-router';
     </header>
 
     <main class="dashboard-main">
-      <slot />
+      <RouterView />
     </main>
 
   </div>

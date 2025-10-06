@@ -41,7 +41,7 @@ import { RouterLink } from 'vue-router';
     </header>
 
     <main class="dashboard-main">
-      <slot />
+      <RouterView />
     </main>
 
   </div>
@@ -144,7 +144,7 @@ import { RouterLink } from 'vue-router';
 .dashboard-main {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  padding: 20px;
+  padding: 50px;
   overflow-y: auto;
 }
 
