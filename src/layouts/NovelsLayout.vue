@@ -148,10 +148,6 @@ import { RouterLink } from 'vue-router';
   overflow-y: auto;
 }
 
-/* a img {
-  width: 20%;
-  height: 20%;
-} */
 
 
 @media screen and (max-width: 400px) {
