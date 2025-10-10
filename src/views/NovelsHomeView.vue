@@ -1,5 +1,5 @@
 <script setup>
-import NovelDescription from '@/components/novels/NovelDescription.vue';
+import NovelsDescription from '@/components/novels/NovelsDescription.vue';
 
 
 </script>
@@ -17,7 +17,7 @@ import NovelDescription from '@/components/novels/NovelDescription.vue';
 
     </div>
 
-    <NovelDescription class="description-container" />
+    <NovelsDescription class="description-container" />
 
   </div>
 

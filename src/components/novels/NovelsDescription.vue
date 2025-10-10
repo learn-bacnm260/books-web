@@ -11,7 +11,7 @@
       <p class="description">
         This is a brief description of the novel. It provides an overview of the plot, characters, and setting to
         entice readers to explore
-        further.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        further.
 
       </p>
 
