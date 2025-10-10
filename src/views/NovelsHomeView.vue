@@ -1,7 +1,6 @@
 <script setup>
 import NovelsDescription from '@/components/novels/NovelsDescription.vue';
 
-
 </script>
 
 <template>
