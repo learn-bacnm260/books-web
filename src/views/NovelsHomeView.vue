@@ -1,5 +1,6 @@
 <script setup>
 import NovelsDescription from '@/components/novels/NovelsDescription.vue';
+import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
 
 
 </script>
@@ -9,11 +10,9 @@ import NovelsDescription from '@/components/novels/NovelsDescription.vue';
   <div class="novels-home-view">
 
     <div class="history-container">
-      <h2>History</h2>
+      <h1>LỊCH SỬ ĐỌC:</h1>
 
-      <ul class="history-list">
-        <li class="history-item" v-for="n in 10" :key="n">Novel {{ n }}</li>
-      </ul>
+      <NovelsHomeHistory class="history-list" />
 
     </div>
 
@@ -25,34 +24,51 @@ import NovelsDescription from '@/components/novels/NovelsDescription.vue';
 
 <style lang="css" scoped>
 .novels-home-view {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   align-items: center;
 
   padding: 20px;
   box-sizing: border-box;
 }
 
-.history-list {
-  height: 400px;
-  width: 100%;
+.history-container {
+  height: 700px;
+  max-width: 90%;
+  overflow: hidden;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+
+  border-radius: 10px;
+  border: 1px solid #ccc;
+
+}
+
+.history-container h1 {
+  margin: 40px 0 0 40px;
+  padding: 0;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.history-list {
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .description-container {
-  height: 250px;
+  height: 350px;
   max-width: 50%;
   display: flex;
   flex-direction: row;
   gap: 20px;
   align-items: flex-start;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 930px) {

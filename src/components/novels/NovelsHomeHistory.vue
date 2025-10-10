@@ -1,0 +1,121 @@
+<script setup>
+
+import { ref } from 'vue';
+
+const listItems = ref([
+  { id: 1, url: 'src/assets/mock-data/cover/300 (1).jpg' },
+  { id: 2, url: 'src/assets/mock-data/cover/300 (2).jpg' },
+  { id: 3, url: 'src/assets/mock-data/cover/300 (3).jpg' },
+  { id: 4, url: 'src/assets/mock-data/cover/300 (4).jpg' },
+  { id: 5, url: 'src/assets/mock-data/cover/300 (5).jpg' },
+  { id: 6, url: 'src/assets/mock-data/cover/300 (6).jpg' },
+  { id: 7, url: 'src/assets/mock-data/cover/300 (7).jpg' },
+  { id: 8, url: 'src/assets/mock-data/cover/300 (8).jpg' },
+  { id: 9, url: 'src/assets/mock-data/cover/300 (9).jpg' },
+  { id: 10, url: 'src/assets/mock-data/cover/300 (10).jpg' },
+
+]);
+
+</script>
+
+
+<template>
+  <div class="novels-history">
+
+    <!-- <ul class="novel-list">
+      <li class="novel-item" v-for="item in listItems" :key="item.id">
+        <div class="novel-cover-container">
+          <img :src="item.url" :alt="`Novel Cover ${item.id}`" class="novel-cover" />
+        </div>
+      </li>
+    </ul> -->
+
+    <div class="novel-list">
+      <div class="novel-cover-container" v-for="item in listItems" :key="item.id">
+        <img :src="item.url" :alt="`Novel Cover ${item.id}`" class="novel-cover" />
+      </div>
+    </div>
+  </div>
+
+</template>
+
+<style lang="css" scoped>
+.novels-history {
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+
+}
+
+
+
+.novel-list {
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 40px;
+  align-items: center;
+
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /* Tùy chọn: Thêm hiệu ứng cuộn mượt (scroll-snap) */
+  scroll-snap-type: x mandatory;
+  /* Quan trọng cho việc "dính" vào item */
+  -webkit-overflow-scrolling: touch;
+  /* Cho trải nghiệm cuộn tốt hơn trên iOS */
+  scroll-behavior: smooth;
+
+  /* Ẩn thanh cuộn (cho Webkit) */
+  /* scrollbar-width: none; */
+  /* Firefox */
+  /* -ms-overflow-style: none; */
+  /* IE and Edge */
+}
+
+
+/* Container cho ảnh - QUAN TRỌNG */
+.novel-cover-container {
+  display: block;
+  flex: 1 0 auto;
+
+  /* Chiều cao cố định (ratio 2:3 cho sách) */
+  height: 75%;
+  /* Chiều rộng cố định (ratio 2:3 cho sách) */
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.novel-cover-container:hover {
+  transform: scale(1.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Ảnh được crop đúng cách */
+.novel-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Crop ảnh giữ tỷ lệ */
+  object-position: center top;
+  /* Crop từ center */
+  display: block;
+
+}
+</style>

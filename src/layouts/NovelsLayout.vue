@@ -12,15 +12,15 @@ import { RouterLink } from 'vue-router';
       <div class="menu-nav">
         <RouterLink to="/">
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          Books
+          <h1>Books</h1>
         </RouterLink>
         <RouterLink to="/">
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          Mangas
+          <h1>Manga</h1>
         </RouterLink>
         <RouterLink to="/">
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          Novels
+          <h1>Novels</h1>
         </RouterLink>
       </div>
 
@@ -66,7 +66,6 @@ import { RouterLink } from 'vue-router';
 
 .dashboard-header {
   width: 100%;
-  height: 100%;
 
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -81,7 +80,6 @@ import { RouterLink } from 'vue-router';
 
 .menu-nav {
   width: 100%;
-
   flex: 1;
   display: flex;
   flex-flow: row nowrap;
@@ -100,7 +98,7 @@ import { RouterLink } from 'vue-router';
 
 .tool-bar {
   width: 100%;
-
+  flex: 1;
   display: grid;
   grid-template-columns: 1fr 2fr min-content min-content;
   grid-template-rows: 1fr;
@@ -110,7 +108,7 @@ import { RouterLink } from 'vue-router';
 
 
 .tool-bar .search-input {
-  height: 30px;
+  height: 50px;
   margin-left: 10px;
   margin-right: 10px;
   padding-left: 20px;
@@ -122,7 +120,7 @@ import { RouterLink } from 'vue-router';
 
 .tool-bar button {
 
-  height: 40px;
+  height: 50px;
   aspect-ratio: 1 / 1;
 
   margin: 5px;
@@ -134,17 +132,13 @@ import { RouterLink } from 'vue-router';
 
 }
 
-.tool-bar .button-search {
-  height: 30px;
-}
-
 
 
 
 .dashboard-main {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  padding: 50px;
+  /* padding: 50px; */
   overflow-y: auto;
 }
 
