@@ -31,6 +31,7 @@ const themeColor = ref(backgroundLightColor);
       </ul>
 
       <input class="search-input" type="text" placeholder="Search..." />
+
       <button class="button-search">
         <img alt="Search icon" class="icon" src="@/assets/icons/search-icon.svg" />
       </button>
@@ -38,6 +39,7 @@ const themeColor = ref(backgroundLightColor);
       <button class="button-user-profile">
         <img alt="User profile icon" class="icon" src="@/assets/icons/user-profile-icon.svg" />
       </button>
+
       <button class="button-settings">
         <img alt="Settings icon" class="icon" src="@/assets/icons/settings-icon.svg" />
       </button>
@@ -77,7 +79,6 @@ const themeColor = ref(backgroundLightColor);
   align-items: center;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: v-bind(themeColor);
 
 }
 
@@ -90,6 +91,9 @@ const themeColor = ref(backgroundLightColor);
   overflow: hidden;
   flex-shrink: 0;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+
+  transition: all 0.2s ease-in-out;
+
 }
 
 
@@ -104,7 +108,7 @@ const themeColor = ref(backgroundLightColor);
   height: 100%;
   padding: 0;
   margin: 0;
-  margin-left: 10px;
+  margin-left: 40px;
   padding: 0 10px;
   box-sizing: inherit;
 
@@ -138,7 +142,14 @@ const themeColor = ref(backgroundLightColor);
   outline: none;
   box-sizing: border-box;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  font-size: 16px;
+  font-size: 24px;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-input:focus {
+  border: solid 1px #555;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  transform: scale(1.1) translateX(-30px);
 }
 
 button {
@@ -156,12 +167,13 @@ button {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
   background-color: rgb(200, 200, 200);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.4);
 }
 
 footer {
@@ -174,6 +186,10 @@ footer {
   overflow-y: auto;
 }
 
+.main-logo:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
+}
 
 
 

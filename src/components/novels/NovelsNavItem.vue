@@ -15,6 +15,7 @@ const toggleSubMenu = () => {
   isSubMenuOpen.value = !isSubMenuOpen.value;
 };
 
+
 </script>
 
 <template>
@@ -63,6 +64,7 @@ li {
   border-bottom: 4px solid #ddd;
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8;
   /* Bỏ padding ở đây để kiểm soát nó trên button-link */
 
   display: flex;
@@ -70,19 +72,37 @@ li {
   column-gap: 5px;
   align-items: center;
   justify-content: flex-start;
+  z-index: 1;
 
   font-size: 24px;
   /* Giảm cỡ chữ để trông hiện đại hơn */
   font-weight: 600;
   /* Dùng semi-bold */
+  transition: all 0.2s ease-in-out;
+}
+
+.has-children:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
+  transform: scale(1.1);
 }
 
 .button-link {
+  height: 100%;
   /* Cho phép liên kết kéo giãn và kiểm soát padding ở đây */
   flex: 1;
   padding: 0 12px;
+
+
+  /* Căn giữa nội dung text trong button-link */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-decoration: none;
-  color: #333;
+  color: #333;  
+  border-left: 1px solid #ddd;
+
   transition: color 0.2s ease;
   /* Hiệu ứng chuyển màu chữ */
   border-radius: 4px;
@@ -103,12 +123,12 @@ li {
 button {
   flex-shrink: 0;
   /* Quan trọng: Ngăn không cho nút bị kéo giãn */
-  height: auto;
+  height: 100%;
+  aspect-ratio: 1 / 1;
   padding: 8px 10px;
   background: none;
   border: none;
   cursor: pointer;
-  border-right: 1px solid #ddd;
   /* Dùng màu nhạt hơn */
   transition: all 0.2s;
   color: #555;
@@ -116,6 +136,7 @@ button {
 
 button:hover {
   color: #007bff;
+  transform: scale(1.5);
 }
 
 /* -------------------------------------------------- */
@@ -129,6 +150,14 @@ button:hover {
   margin-top: 5px;
   /* Khoảng cách với mục cha */
 
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  /* Viền nhẹ */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Đổ bóng tinh tế */
+  border-radius: 5px;
+
+
   /* Hiệu ứng chuyển động */
   opacity: 1;
   /* Cần dùng JS để ẩn/hiện, nhưng giữ opacity 1 khi hiển thị */
@@ -136,12 +165,7 @@ button:hover {
   /* Điểm neo chuyển động */
   transition: all 0.3s ease-out;
 
-  background-color: #ffffff;
-  border: 1px solid #eee;
-  /* Viền nhẹ */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  /* Đổ bóng tinh tế */
-  border-radius: 5px;
+
 
   display: flex;
   flex-flow: column nowrap;
@@ -165,13 +189,14 @@ button:hover {
   border-left: none;
   padding-left: 0;
   padding-right: 0;
+
 }
 
 /* Nhắm mục tiêu RouterLink bên trong item con */
 .sub-menu-item .button-link {
   padding: 6px 15px;
   /* Điều chỉnh padding cho menu con */
-  font-size: 18px;
+  font-size: 28px;
   /* Giảm cỡ chữ menu con */
   font-weight: normal;
   /* Giảm độ đậm */
