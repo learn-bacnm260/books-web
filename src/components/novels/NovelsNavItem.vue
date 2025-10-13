@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
-const props = defineProps({
+defineProps({
   item: {
     type: Object,
     required: true
@@ -19,59 +19,169 @@ const toggleSubMenu = () => {
 
 <template>
 
-  <li :class="{ 'has-children': item.children }">
-    <RouterLink :to="item.path">
-      {{ item.name }}
-    </RouterLink>
+  <div :class="{ 'has-children': item.children }">
+
 
 
     <button v-if="item.children" @click="item.children && toggleSubMenu()">
 
       <span>{{ isSubMenuOpen ? '▲' : '▼' }}</span>
     </button>
+    <RouterLink :to="item.path" class="button-link">
+      {{ item.name }}
+    </RouterLink>
+    <div v-if="item.children && isSubMenuOpen" class="sub-menu">
+      <NovelsNavItem class="sub-menu-item" v-for="child in item.children" :key="child.name" :item="child" />
+    </div>
 
-    <ul v-if="item.children && isSubMenuOpen" class="sub-menu">
-      <NovelsNavItem v-for="child in item.children" :key="child.name" :item="child" />
-    </ul>
-
-  </li>
+  </div>
 
 
 
 </template>
 <style lang="css" scoped>
+/* Reset cơ bản */
 ul,
 li {
-  list-style-type: none;
-}
-
-/* CSS cho menu con */
-.has-children {
-  position: relative;
-}
-
-.sub-menu {
   list-style: none;
-  padding-left: 15px;
-  /* Tạo độ thụt vào cho cấp con */
-  margin: 5px 0;
-  border-left: 2px solid #ccc;
-  /* Đường viền chỉ báo cấp */
+  padding: 0;
+  /* Đảm bảo không có padding mặc định */
+  margin: 0;
+  /* Đảm bảo không có margin mặc định */
+}
+
+/* -------------------------------------------------- */
+/* 1. Mục Cha và Liên kết Chính */
+/* -------------------------------------------------- */
+.has-children {
+  /* Loại bỏ max-content để tránh bị tràn và căn chỉnh tốt hơn */
+  width: auto;
+  height: 80%;
+  position: relative;
+  padding: 0;
+  border-right: 1px solid #ddd;
+  border-bottom: 4px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* Bỏ padding ở đây để kiểm soát nó trên button-link */
+
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-size: 24px;
+  /* Giảm cỡ chữ để trông hiện đại hơn */
+  font-weight: 600;
+  /* Dùng semi-bold */
+}
+
+.button-link {
+  /* Cho phép liên kết kéo giãn và kiểm soát padding ở đây */
+  flex: 1;
+  padding: 0 12px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+  /* Hiệu ứng chuyển màu chữ */
+  border-radius: 4px;
+  /* Bo góc nhẹ */
+}
+
+/* Hiệu ứng HOVER cho liên kết chính */
+.button-link:hover {
+  color: #007bff;
+  /* Màu xanh nổi bật khi hover */
+  background-color: #f0f8ff;
+  /* Màu nền rất nhạt */
+}
+
+/* -------------------------------------------------- */
+/* 2. Nút Mở Menu Con (Toggle Button) */
+/* -------------------------------------------------- */
+button {
+  flex-shrink: 0;
+  /* Quan trọng: Ngăn không cho nút bị kéo giãn */
+  height: auto;
+  padding: 8px 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-right: 1px solid #ddd;
+  /* Dùng màu nhạt hơn */
+  transition: all 0.2s;
+  color: #555;
+}
+
+button:hover {
+  color: #007bff;
+}
+
+/* -------------------------------------------------- */
+/* 3. Menu Con (Sub-menu) */
+/* -------------------------------------------------- */
+.sub-menu {
+  width: max-content;
+  min-width: 180px;
+  padding: 5px 0;
+  /* Padding trên dưới cho cả khối */
+  margin-top: 5px;
+  /* Khoảng cách với mục cha */
+
+  /* Hiệu ứng chuyển động */
+  opacity: 1;
+  /* Cần dùng JS để ẩn/hiện, nhưng giữ opacity 1 khi hiển thị */
+  transform-origin: top;
+  /* Điểm neo chuyển động */
+  transition: all 0.3s ease-out;
+
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  /* Viền nhẹ */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Đổ bóng tinh tế */
+  border-radius: 5px;
+
+  display: flex;
+  flex-flow: column nowrap;
+
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 10;
 }
 
-/* Kiểu dáng cho liên kết và mũi tên */
-li a {
-  display: inline;
-  padding: 8px 0;
-  text-decoration: none;
-  color: #333;
+/* -------------------------------------------------- */
+/* 4. Mục Con trong Sub-menu (Sử dụng selector để nhắm mục tiêu) */
+/* -------------------------------------------------- */
+
+/* Mục con (NovelsNavItem) được render trong sub-menu */
+.sub-menu-item {
+  width: 100%;
+  /* Đảm bảo mục con chiếm toàn bộ chiều rộng sub-menu */
+
+  /* Bỏ border left thừa trên item con vì đã có border cho khối sub-menu */
+  border-left: none;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-li a:hover {
-  background-color: #f0f0f0;
+/* Nhắm mục tiêu RouterLink bên trong item con */
+.sub-menu-item .button-link {
+  padding: 6px 15px;
+  /* Điều chỉnh padding cho menu con */
+  font-size: 18px;
+  /* Giảm cỡ chữ menu con */
+  font-weight: normal;
+  /* Giảm độ đậm */
+}
+
+/* HIỆU ỨNG QUAN TRỌNG: Đổi màu chữ khi hover qua item con */
+.sub-menu-item .button-link:hover {
+  background-color: #e6f7ff;
+  /* Màu nền khi hover cho menu con (nhạt hơn) */
+  color: #007bff;
+  /* Giữ màu chữ nổi bật */
 }
 </style>

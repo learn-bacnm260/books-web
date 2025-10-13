@@ -6,35 +6,9 @@ import nav_menu from '@/assets/mock-data/json/NavMenu.json';
 import NovelsNavItem from '@/components/novels/NovelsNavItem.vue';
 
 
-const backgroundLightColor = '#FFFACD';
+const backgroundLightColor = '#FFFFFF';
 const themeColor = ref(backgroundLightColor);
 
-// Dữ liệu mẫu (có thể là dữ liệu lấy từ API)
-const menuItems = [
-  {
-    name: 'Trang Chủ',
-    path: '/'
-  },
-  {
-    name: 'Sản Phẩm',
-    path: '/products',
-    children: [ // Cấp 2
-      { name: 'Laptop', path: '/products/laptops' },
-      {
-        name: 'Phụ Kiện',
-        path: '/products/accessories',
-        children: [ // Cấp 3
-          { name: 'Chuột', path: '/accessories/mouse' },
-          { name: 'Bàn Phím', path: '/accessories/keyboard' },
-        ]
-      },
-    ]
-  },
-  {
-    name: 'Liên Hệ',
-    path: '/contact'
-  },
-];
 
 
 </script>
@@ -53,7 +27,7 @@ const menuItems = [
       </div>
 
       <ul class="menu-nav">
-        <NovelsNavItem v-for="item in nav_menu" :key="item.name" :item="item" />
+        <NovelsNavItem v-for="item in nav_menu" :key="item.name" :item="item" class="navItem" />
       </ul>
 
       <input class="search-input" type="text" placeholder="Search..." />
@@ -70,12 +44,12 @@ const menuItems = [
 
     </header>
 
-    <main class="dashboard-main">
+    <main class="novels-layout-main">
       <RouterView />
     </main>
 
     <footer>
-      <h2>© 2024 Books. All rights reserved.</h2>
+      <h2>© 2025 Books. All rights reserved.</h2>
     </footer>
 
   </div>
@@ -114,6 +88,8 @@ const menuItems = [
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -125,9 +101,10 @@ const menuItems = [
 
 .menu-nav {
 
-  height: 80%;
+  height: 100%;
   padding: 0;
   margin: 0;
+  margin-left: 10px;
   padding: 0 10px;
   box-sizing: inherit;
 
@@ -137,14 +114,22 @@ const menuItems = [
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 40px;
 
 
 }
 
+.navItem:hover {
+  height: 100%;
+
+  border-radius: 5px;
+  border-bottom: 1px solid gray;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
 
 .search-input {
   height: 50px;
+  width: 30%;
   margin-left: 10px;
   margin-right: 10px;
   padding-left: 20px;
@@ -152,6 +137,8 @@ const menuItems = [
   border: solid 0.5px gray;
   outline: none;
   box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 16px;
 }
 
 button {
@@ -167,17 +154,22 @@ button {
   background-color: rgb(226, 228, 236);
   display: flex;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
   transition: background-color 0.3s ease;
 }
 
+button:hover {
+  background-color: rgb(200, 200, 200);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
 
 footer {
   text-align: center;
 }
 
 
-.dashboard-main {
+.novels-layout-main {
   overflow-x: hidden;
   overflow-y: auto;
 }

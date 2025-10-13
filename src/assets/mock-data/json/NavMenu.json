@@ -9,7 +9,33 @@
       },
       {
         "name": "Top Rated",
-        "path": "/books/top-rated"
+        "path": "/books/top-rated",
+        "children": [
+          {
+            "name": "Fiction",
+            "path": "/books/categories/fiction"
+          },
+          {
+            "name": "Non-Fiction",
+            "path": "/books/categories/non-fiction"
+          },
+          {
+            "name": "Science Fiction",
+            "path": "/books/categories/science-fiction"
+          },
+          {
+            "name": "Fantasy",
+            "path": "/books/categories/fantasy"
+          },
+          {
+            "name": "Mystery",
+            "path": "/books/categories/mystery"
+          },
+          {
+            "name": "Biography",
+            "path": "/books/categories/biography"
+          }
+        ]
       },
       {
         "name": "New Releases",
