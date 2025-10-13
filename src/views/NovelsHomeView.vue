@@ -1,5 +1,4 @@
 <script setup>
-import NovelsDescription from '@/components/novels/NovelsDescription.vue';
 import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
 
 
@@ -10,13 +9,13 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
   <div class="novels-home-view">
 
     <div class="history-container">
-      <h1>LỊCH SỬ ĐỌC:</h1>
+      <h2>LỊCH SỬ ĐỌC:</h2>
 
       <NovelsHomeHistory class="history-list" />
 
     </div>
 
-    <NovelsDescription class="description-container" />
+    <!-- <NovelsDescription class="description-container" /> -->
 
   </div>
 
@@ -51,7 +50,7 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
 .history-container h1 {
   margin: 40px 0 0 40px;
   padding: 0;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: bold;
 }
 

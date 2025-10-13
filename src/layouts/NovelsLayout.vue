@@ -2,15 +2,39 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
+import nav_menu from '@/assets/mock-data/json/NavMenu.json';
+import NovelsNavItem from '@/components/novels/NovelsNavItem.vue';
+
 
 const backgroundLightColor = '#FFFACD';
-const backgroundDarkColor = '#202636FF';
-
 const themeColor = ref(backgroundLightColor);
 
-const toggleTheme = () => {
-  themeColor.value = themeColor.value === backgroundLightColor ? backgroundDarkColor : backgroundLightColor;
-};
+// Dữ liệu mẫu (có thể là dữ liệu lấy từ API)
+const menuItems = [
+  {
+    name: 'Trang Chủ',
+    path: '/'
+  },
+  {
+    name: 'Sản Phẩm',
+    path: '/products',
+    children: [ // Cấp 2
+      { name: 'Laptop', path: '/products/laptops' },
+      {
+        name: 'Phụ Kiện',
+        path: '/products/accessories',
+        children: [ // Cấp 3
+          { name: 'Chuột', path: '/accessories/mouse' },
+          { name: 'Bàn Phím', path: '/accessories/keyboard' },
+        ]
+      },
+    ]
+  },
+  {
+    name: 'Liên Hệ',
+    path: '/contact'
+  },
+];
 
 
 </script>
@@ -28,25 +52,9 @@ const toggleTheme = () => {
         </RouterLink>
       </div>
 
-
-      <ul class="navigation-menu">
-        <RouterLink to="/" class="nav-link">
-          <h2>Books</h2>
-        </RouterLink>
-        <nav>▼</nav>
-        <RouterLink to="/" class="nav-link">
-          <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          <h2>Manga</h2>
-        </RouterLink>
-        <nav>▼</nav>
-        <RouterLink to="/" class="nav-link">
-          <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          <h2>Novels</h2>
-        </RouterLink>
-        <nav>▼</nav>
-
+      <ul class="menu-nav">
+        <NovelsNavItem v-for="item in nav_menu" :key="item.name" :item="item" />
       </ul>
-
 
       <input class="search-input" type="text" placeholder="Search..." />
       <button class="button-search">
@@ -115,7 +123,7 @@ const toggleTheme = () => {
   object-fit: cover;
 }
 
-.navigation-menu {
+.menu-nav {
 
   height: 80%;
   padding: 0;
@@ -129,20 +137,9 @@ const toggleTheme = () => {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 20px;
 
-  ;
 
-}
-
-h2,
-nav {
-  color: black;
-  margin: 0;
-  padding: 0;
-  display: inline;
-  text-decoration: underline;
-  font-size: 20px;
 }
 
 
@@ -170,9 +167,14 @@ button {
   background-color: rgb(226, 228, 236);
   display: flex;
   align-items: center;
+
+  transition: background-color 0.3s ease;
 }
 
 
+footer {
+  text-align: center;
+}
 
 
 .dashboard-main {
@@ -182,16 +184,8 @@ button {
 
 
 
-@media screen and (max-width: 400px) {
-  .tool-bar {
-    grid-template-columns: 1fr min-content min-content;
-  }
 
-  .tool-bar .search-input {
-    display: none;
-  }
-
-}
+@media screen and (max-width: 400px) {}
 
 
 @media screen and (max-width: 1280px) {

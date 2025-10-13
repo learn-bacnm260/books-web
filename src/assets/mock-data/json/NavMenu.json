@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Books",
+    "path": "/",
+    "children": [
+      {
+        "name": "Categories",
+        "path": "/books/categories"
+      },
+      {
+        "name": "Top Rated",
+        "path": "/books/top-rated"
+      },
+      {
+        "name": "New Releases",
+        "path": "/books/new-releases",
+        "children": [
+          {
+            "name": "Fiction",
+            "path": "/books/categories/fiction"
+          },
+          {
+            "name": "Non-Fiction",
+            "path": "/books/categories/non-fiction"
+          },
+          {
+            "name": "Science Fiction",
+            "path": "/books/categories/science-fiction"
+          },
+          {
+            "name": "Fantasy",
+            "path": "/books/categories/fantasy"
+          },
+          {
+            "name": "Mystery",
+            "path": "/books/categories/mystery"
+          },
+          {
+            "name": "Biography",
+            "path": "/books/categories/biography"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mangas",
+    "path": "/mangas",
+    "children": [
+      {
+        "name": "Categories",
+        "path": "/mangas/categories"
+      },
+      {
+        "name": "Top Rated",
+        "path": "/mangas/top-rated"
+      },
+      {
+        "name": "New Releases",
+        "path": "/mangas/new-releases"
+      }
+    ]
+  },
+  {
+    "name": "Novels",
+    "path": "/novels",
+    "children": [
+      {
+        "name": "Categories",
+        "path": "/novels/categories"
+      },
+      {
+        "name": "Top Rated",
+        "path": "/novels/top-rated"
+      },
+      {
+        "name": "New Releases",
+        "path": "/novels/new-releases"
+      }
+    ]
+  }
+]
