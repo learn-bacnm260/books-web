@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
 
-const backgroundLightColor = '#f7f3e8FF';
+const backgroundLightColor = '#FFFACD';
 const backgroundDarkColor = '#202636FF';
 
 const themeColor = ref(backgroundLightColor);
@@ -21,23 +21,30 @@ const toggleTheme = () => {
 
     <header class="novels-layout-header">
 
-      = <RouterLink to="/" class="main-logo">
-        <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-        <img alt="Books logo" class="logo-img" src="@/assets/logos/book.png" />
-      </RouterLink>
+      <div class="main-logo">
+        <RouterLink to="/">
+          <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
+          <img alt="Books logo" class="logo-img" src="@/assets/logos/book.png" />
+        </RouterLink>
+      </div>
+
 
       <ul class="navigation-menu">
-        <RouterLink to="/">
-          <h1>Books ▼</h1>
+        <RouterLink to="/" class="nav-link">
+          <h2>Books</h2>
         </RouterLink>
-        <RouterLink to="/">
+        <nav>▼</nav>
+        <RouterLink to="/" class="nav-link">
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          <h1>Manga ▼</h1>
+          <h2>Manga</h2>
         </RouterLink>
-        <RouterLink to="/">
+        <nav>▼</nav>
+        <RouterLink to="/" class="nav-link">
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          <h1>Novels ▼</h1>
+          <h2>Novels</h2>
         </RouterLink>
+        <nav>▼</nav>
+
       </ul>
 
 
@@ -60,7 +67,7 @@ const toggleTheme = () => {
     </main>
 
     <footer>
-      <p>© 2024 Books. All rights reserved.</p>
+      <h2>© 2024 Books. All rights reserved.</h2>
     </footer>
 
   </div>
@@ -72,20 +79,23 @@ const toggleTheme = () => {
   height: 100%;
   width: 100%;
   background-color: v-bind(themeColor);
+  border-radius: 10px;
+  overflow: hidden;
+
 }
 
 
 .novels-layout-header {
   width: 100%;
   height: 64px;
-
-
+  padding: 5px 10px;
+  box-sizing: border-box;
   display: flex;
 
   align-items: center;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  background-color: v-bind(themeColor);
 
 }
 
@@ -102,40 +112,41 @@ const toggleTheme = () => {
 .logo-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .navigation-menu {
-  width: 100%;
-  flex: 1;
+
+  height: 80%;
+  padding: 0;
+  margin: 0;
+  padding: 0 10px;
+  box-sizing: inherit;
+
   display: flex;
+  flex: 1;
+
   flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: stretch;
-  background-color: #202636FF;
-}
-
-
-.menu-nav a {
-  display: flex;
-  color: white;
-  font-size: 1.2em;
-  padding: 10px;
-
-}
-
-.tool-bar {
-  width: 100%;
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 2fr min-content min-content;
-  grid-template-rows: 1fr;
+  justify-content: flex-start;
   align-items: center;
+  column-gap: 10px;
+
+  ;
 
 }
 
+h2,
+nav {
+  color: black;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  text-decoration: underline;
+  font-size: 20px;
+}
 
-.tool-bar .search-input {
+
+.search-input {
   height: 50px;
   margin-left: 10px;
   margin-right: 10px;
@@ -146,9 +157,9 @@ const toggleTheme = () => {
   box-sizing: border-box;
 }
 
-.tool-bar button {
+button {
 
-  height: 50px;
+  height: 70%;
   aspect-ratio: 1 / 1;
 
   margin: 5px;
@@ -157,16 +168,15 @@ const toggleTheme = () => {
   border: solid 0.5px gray;
 
   background-color: rgb(226, 228, 236);
-
+  display: flex;
+  align-items: center;
 }
 
 
 
 
 .dashboard-main {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  /* padding: 50px; */
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
