@@ -1,42 +1,57 @@
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+
+
+const backgroundLightColor = '#f7f3e8FF';
+const backgroundDarkColor = '#202636FF';
+
+const themeColor = ref(backgroundLightColor);
+
+const toggleTheme = () => {
+  themeColor.value = themeColor.value === backgroundLightColor ? backgroundDarkColor : backgroundLightColor;
+};
+
 
 </script>
 
 <template>
 
-  <div class="dashboard-layout">
+  <div class="novels-layout">
 
-    <header class="dashboard-header">
+    <header class="novels-layout-header">
 
-      <div class="menu-nav">
+      = <RouterLink to="/" class="main-logo">
+        <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
+        <img alt="Books logo" class="logo-img" src="@/assets/logos/book.png" />
+      </RouterLink>
+
+      <ul class="navigation-menu">
         <RouterLink to="/">
-          <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          <h1>Books</h1>
+          <h1>Books ▼</h1>
         </RouterLink>
         <RouterLink to="/">
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          <h1>Manga</h1>
+          <h1>Manga ▼</h1>
         </RouterLink>
         <RouterLink to="/">
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          <h1>Novels</h1>
+          <h1>Novels ▼</h1>
         </RouterLink>
-      </div>
+      </ul>
 
-      <div class="tool-bar">
-        <input class="search-input" type="text" placeholder="Search..." />
-        <button class="button-search">
-          <img alt="Search icon" class="icon" src="@/assets/icons/search-icon.svg" />
-        </button>
 
-        <button class="button-user-profile">
-          <img alt="User profile icon" class="icon" src="@/assets/icons/user-profile-icon.svg" />
-        </button>
-        <button class="button-settings">
-          <img alt="Settings icon" class="icon" src="@/assets/icons/settings-icon.svg" />
-        </button>
-      </div>
+      <input class="search-input" type="text" placeholder="Search..." />
+      <button class="button-search">
+        <img alt="Search icon" class="icon" src="@/assets/icons/search-icon.svg" />
+      </button>
+
+      <button class="button-user-profile">
+        <img alt="User profile icon" class="icon" src="@/assets/icons/user-profile-icon.svg" />
+      </button>
+      <button class="button-settings">
+        <img alt="Settings icon" class="icon" src="@/assets/icons/settings-icon.svg" />
+      </button>
 
     </header>
 
@@ -44,41 +59,53 @@ import { RouterLink } from 'vue-router';
       <RouterView />
     </main>
 
+    <footer>
+      <p>© 2024 Books. All rights reserved.</p>
+    </footer>
+
   </div>
 
 </template>
 
 <style lang="css" scoped>
-.dashboard-layout {
+.novels-layout {
   height: 100%;
   width: 100%;
-  background-color: #f7f3e8FF;
-  ;
-
-  display: grid;
-  grid-template-rows: 2fr 18fr;
-  grid-template-columns: 1fr;
-
-  border-radius: 10px;
-  overflow: hidden;
-  /* grid-template-areas: ; */
+  background-color: v-bind(themeColor);
 }
 
-.dashboard-header {
-  width: 100%;
 
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+.novels-layout-header {
+  width: 100%;
+  height: 64px;
+
+
   display: flex;
-  flex-direction: column;
+
   align-items: center;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
+  background-color: white;
 
 }
 
-.menu-nav {
+
+.main-logo {
+
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navigation-menu {
   width: 100%;
   flex: 1;
   display: flex;
@@ -87,6 +114,7 @@ import { RouterLink } from 'vue-router';
   align-items: stretch;
   background-color: #202636FF;
 }
+
 
 .menu-nav a {
   display: flex;
@@ -153,5 +181,16 @@ import { RouterLink } from 'vue-router';
     display: none;
   }
 
+}
+
+
+@media screen and (max-width: 1280px) {
+  .menu-nav {
+    justify-content: space-between;
+  }
+
+  .menu-nav a:nth-child(n + 2) {
+    display: none;
+  }
 }
 </style>
