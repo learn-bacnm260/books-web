@@ -1,6 +1,7 @@
 <script setup>
-import NovelsHomeCategory from '@/components/novels/NovelsHomeCategory.vue';
+import NovelsHomeCategories from '@/components/novels/NovelsHomeCategories.vue';
 import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
+import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 
 
 </script>
@@ -16,11 +17,11 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
     <!-- <NovelsDescription class="description-container" /> -->
 
     <div clas="novel-chapter-update">
-
+      <NovelsHomeUpdateList />
     </div>
 
     <div class="novel-categories">
-
+      <NovelsHomeCategories />
     </div>
 
   </div>

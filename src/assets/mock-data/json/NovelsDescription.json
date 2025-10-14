@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "url": "src/assets/mock-data/cover/300 (1).jpg",
+    "timestamp": "2023-10-01T10:00:00Z",
+    "title": "Novel Title 1",
+    "chapter": "Chapter 5",
+    "author": "Author A"
+  },
+  {
+    "id": 2,
+    "url": "src/assets/mock-data/cover/300 (2).jpg",
+    "timestamp": "2023-10-02T12:00:00Z",
+    "title": "Novel Title 2",
+    "chapter": "Chapter 10",
+    "author": "Author B"
+  },
+  {
+    "id": 3,
+    "url": "src/assets/mock-data/cover/300 (3).jpg",
+    "timestamp": "2023-10-03T14:00:00Z",
+    "title": "Novel Title 3",
+    "chapter": "Chapter 15",
+    "author": "Author C"
+  },
+  {
+    "id": 4,
+    "url": "src/assets/mock-data/cover/300 (4).jpg",
+    "timestamp": "2023-10-04T16:00:00Z",
+    "title": "Novel Title 4",
+    "chapter": "Chapter 20",
+    "author": "Author D"
+  },
+  {
+    "id": 5,
+    "url": "src/assets/mock-data/cover/300 (5).jpg",
+    "timestamp": "2023-10-05T18:00:00Z",
+    "title": "Novel Title 5",
+    "chapter": "Chapter 25",
+    "author": "Author E"
+  },
+  {
+    "id": 6,
+    "url": "src/assets/mock-data/cover/300 (6).jpg",
+    "timestamp": "2023-10-06T20:00:00Z",
+    "title": "Novel Title 6",
+    "chapter": "Chapter 30",
+    "author": "Author F"
+  },
+  {
+    "id": 7,
+    "url": "src/assets/mock-data/cover/300 (7).jpg",
+    "timestamp": "2023-10-07T22:00:00Z",
+    "title": "Novel Title 7",
+    "chapter": "Chapter 35",
+    "author": "Author G"
+  },
+  {
+    "id": 8,
+    "url": "src/assets/mock-data/cover/300 (8).jpg",
+    "timestamp": "2023-10-08T23:00:00Z",
+    "title": "Novel Title 8",
+    "chapter": "Chapter 40",
+    "author": "Author H"
+  },
+  {
+    "id": 9,
+    "url": "src/assets/mock-data/cover/300 (9).jpg",
+    "timestamp": "2023-10-09T09:00:00Z",
+    "title": "Novel Title 9",
+    "chapter": "Chapter 45",
+    "author": "Author I"
+  },
+  {
+    "id": 10,
+    "url": "src/assets/mock-data/cover/300 (10).jpg",
+    "timestamp": "2023-10-10T11:00:00Z",
+    "title": "Novel Title 10",
+    "chapter": "Chapter 50",
+    "author": "Author J"
+  }
+]
