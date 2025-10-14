@@ -36,28 +36,20 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
   gap: 40px;
   align-items: center;
 
-  padding: 20px;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
 .history-container {
-  height: 700px;
+  height: 500px;
   max-width: 90%;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 
   border-radius: 10px;
   border: 1px solid #ccc;
 
 }
 
-.history-container h1 {
-  margin: 40px 0 0 40px;
-  padding: 0;
-  font-size: 32px;
-  font-weight: bold;
-}
 
 .history-list {
   height: 100%;
@@ -65,7 +57,7 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
   overflow: hidden;
 }
 
-.description-container {
+/* .description-container {
   height: 350px;
   max-width: 50%;
   display: flex;
@@ -73,12 +65,5 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
   gap: 20px;
   align-items: flex-start;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (max-width: 930px) {
-  .description-container {
-    display: none;
-  }
-
-}
+} */
 </style>
