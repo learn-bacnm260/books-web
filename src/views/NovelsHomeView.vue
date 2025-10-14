@@ -10,7 +10,7 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
   <div class="novels-home-view">
 
     <div class="history-container">
-      <NovelsHomeHistory class="history-list" />
+      <NovelsHomeHistory />
     </div>
 
     <!-- <NovelsDescription class="description-container" /> -->
@@ -41,20 +41,14 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
 }
 
 .history-container {
-  height: 500px;
-  max-width: 90%;
+  height: 400px;
+  max-width: 80%;
   overflow: hidden;
+
 
   border-radius: 10px;
   border: 1px solid #ccc;
 
-}
-
-
-.history-list {
-  height: 100%;
-  max-width: 100%;
-  overflow: hidden;
 }
 
 /* .description-container {

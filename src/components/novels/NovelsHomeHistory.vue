@@ -52,18 +52,25 @@ const listItems = ref([
 
 }
 
+.novels-history>h2 {
+  padding: 0;
+  margin: 20px 20px 10px 20px;
+}
+
 
 
 .novel-list {
 
   width: 100%;
-
   margin: 0;
   padding: 0;
 
+  flex: 1;
+
+
   display: flex;
   flex-flow: row nowrap;
-  gap: 40px;
+  gap: 50px;
   align-items: center;
 
 
@@ -87,11 +94,10 @@ const listItems = ref([
 
 /* Container cho ảnh - QUAN TRỌNG */
 .novel-cover-container {
-  display: block;
   flex: 1 0 auto;
 
   /* Chiều cao cố định (ratio 2:3 cho sách) */
-  height: 75%;
+  height: 80%;
   /* Chiều rộng cố định (ratio 2:3 cho sách) */
   aspect-ratio: 2 / 3;
   overflow: hidden;
