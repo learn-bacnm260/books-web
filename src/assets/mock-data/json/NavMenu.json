@@ -33,7 +33,21 @@
           },
           {
             "name": "Biography",
-            "path": "/books/categories/biography"
+            "path": "/books/categories/biography",
+            "children": [
+              {
+                "name": "Historical Biography",
+                "path": "/books/categories/biography/historical"
+              },
+              {
+                "name": "Literary Biography",
+                "path": "/books/categories/biography/literary"
+              },
+              {
+                "name": "Political Biography",
+                "path": "/books/categories/biography/political"
+              }
+            ]
           }
         ]
       },

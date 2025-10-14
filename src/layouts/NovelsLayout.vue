@@ -1,3 +1,4 @@
+``
 <script setup>
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
@@ -123,12 +124,18 @@ const themeColor = ref(backgroundLightColor);
 
 }
 
+.navItem {
+  transition: all 0.2s ease-in-out;
+}
+
 .navItem:hover {
   height: 100%;
 
   border-radius: 5px;
   border-bottom: 1px solid gray;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+
 }
 
 .search-input {
@@ -189,20 +196,5 @@ footer {
 .main-logo:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: scale(1.2);
-}
-
-
-
-@media screen and (max-width: 400px) {}
-
-
-@media screen and (max-width: 1280px) {
-  .menu-nav {
-    justify-content: space-between;
-  }
-
-  .menu-nav a:nth-child(n + 2) {
-    display: none;
-  }
 }
 </style>

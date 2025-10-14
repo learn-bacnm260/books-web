@@ -1,20 +1,76 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, provide, inject, computed } from 'vue';
 import { RouterLink } from 'vue-router';
 
-defineProps({
+/**
+ * Cho phép component tự tham chiếu (recursion)
+ */
+defineOptions({
+  name: 'NovelsNavItem'
+});
+
+const props = defineProps({
   item: {
     type: Object,
     required: true
   }
 });
 
-const isSubMenuOpen = ref(false);
+/**
+ * Nav context: nếu chưa có context (tức đây là root), tạo và provide.
+ * Context chứa openPath (mảng id từ root tới node đang mở) và các helper.
+ */
+const parentNavContext = inject('navContext', null);
+let navContext = parentNavContext;
 
-const toggleSubMenu = () => {
-  isSubMenuOpen.value = !isSubMenuOpen.value;
+if (!parentNavContext) {
+  // tạo context ở root
+  const openPath = ref([]); // lưu trữ chuỗi id đang mở: [rootId, ..., leafId]
+  const open = (pathArray) => {
+    openPath.value = pathArray.slice();
+  };
+  const closeFrom = (id) => {
+    const idx = openPath.value.indexOf(id);
+    if (idx !== -1) openPath.value = openPath.value.slice(0, idx);
+  };
+  navContext = { openPath, open, closeFrom };
+  provide('navContext', navContext);
+}
+
+/**
+ * Lineage: mảng id của các cha (được inherit bằng inject).
+ * Mỗi instance tạo myLineage = [...lineage, myId] và provide xuống cho con.
+ * Giải pháp này cho phép khi gọi open(myLineage) chúng ta biết rõ đường dẫn từ root tới node.
+ */
+const parentLineage = inject('lineage', []);
+// Lấy id cho item — ưu tiên item.id (nên thêm id duy nhất cho mỗi mục), nếu không có dùng path hoặc name.
+const id = props.item.id ?? props.item.path ?? props.item.name;
+const myLineage = [...parentLineage, id];
+provide('lineage', myLineage);
+
+/**
+ * Trạng thái open dựa trên navContext.openPath (reactive, chia sẻ cho toàn cây)
+ * Nếu id hiện diện trong openPath => menu của node này đang được mở
+ */
+const isSubMenuOpen = computed(() => {
+  return navContext.openPath.value.includes(id);
+});
+
+/**
+ * Toggle: nếu đang mở thì đóng (loại bỏ id và descendant trong openPath),
+ * nếu đang đóng thì mở (gán openPath = myLineage)
+ */
+const toggleSubMenu = (e) => {
+  e && e.stopPropagation && e.stopPropagation();
+  if (isSubMenuOpen.value) {
+    // đóng chính node này và tất cả con của nó
+    const idx = navContext.openPath.value.indexOf(id);
+    if (idx !== -1) navContext.openPath.value = navContext.openPath.value.slice(0, idx);
+  } else {
+    // mở: giữ nguyên chuỗi từ root tới node này
+    navContext.open(myLineage);
+  }
 };
-
 
 </script>
 
@@ -84,7 +140,6 @@ li {
 .has-children:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #f0f0f0;
-  transform: scale(1.1);
 }
 
 .button-link {
@@ -100,7 +155,7 @@ li {
   justify-content: center;
 
   text-decoration: none;
-  color: #333;  
+  color: #333;
   border-left: 1px solid #ddd;
 
   transition: color 0.2s ease;
@@ -174,22 +229,30 @@ button:hover {
   top: 100%;
   left: 0;
   z-index: 10;
+
 }
 
-/* -------------------------------------------------- */
-/* 4. Mục Con trong Sub-menu (Sử dụng selector để nhắm mục tiêu) */
-/* -------------------------------------------------- */
+.sub-menu-item {
+  display: flex;
+  position: relative;
+}
+
 
 /* Mục con (NovelsNavItem) được render trong sub-menu */
-.sub-menu-item {
+.sub-menu-item .sub-menu {
   width: 100%;
   /* Đảm bảo mục con chiếm toàn bộ chiều rộng sub-menu */
 
   /* Bỏ border left thừa trên item con vì đã có border cho khối sub-menu */
-  border-left: none;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  margin-left: 6px;
+  width: max-content;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Nhắm mục tiêu RouterLink bên trong item con */
