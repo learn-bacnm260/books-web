@@ -29,6 +29,7 @@ const listItems = ref([
         </div>
       </li>
     </ul> -->
+    <h2>LỊCH SỬ ĐỌC:</h2>
 
     <div class="novel-list">
       <div class="novel-cover-container" v-for="item in listItems" :key="item.id">
@@ -43,6 +44,7 @@ const listItems = ref([
 .novels-history {
 
   display: flex;
+  flex-flow: column nowrap;
   width: 100%;
   height: 100%;
   box-sizing: border-box;

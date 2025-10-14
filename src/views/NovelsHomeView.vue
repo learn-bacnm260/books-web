@@ -1,4 +1,5 @@
 <script setup>
+import NovelsHomeCategory from '@/components/novels/NovelsHomeCategory.vue';
 import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
 
 
@@ -9,16 +10,20 @@ import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
   <div class="novels-home-view">
 
     <div class="history-container">
-      <h2>LỊCH SỬ ĐỌC:</h2>
-
       <NovelsHomeHistory class="history-list" />
-
     </div>
 
     <!-- <NovelsDescription class="description-container" /> -->
 
-  </div>
+    <div clas="novel-chapter-update">
 
+    </div>
+
+    <div class="novel-categories">
+
+    </div>
+
+  </div>
 </template>
 
 <style lang="css" scoped>
