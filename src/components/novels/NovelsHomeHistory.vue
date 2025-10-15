@@ -81,18 +81,8 @@ onMounted(() => {
   margin: 0;
   padding: 0;
 
-  flex: 1;
-
-
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 50px;
-  align-items: center;
-
-
   overflow-x: auto;
   overflow-y: hidden;
-
   /* Tùy chọn: Thêm hiệu ứng cuộn mượt (scroll-snap) */
   scroll-snap-type: x mandatory;
   /* Quan trọng cho việc "dính" vào item */
@@ -105,6 +95,14 @@ onMounted(() => {
   /* Firefox */
   /* -ms-overflow-style: none; */
   /* IE and Edge */
+  flex: 1;
+
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 50px;
+  align-items: center;
+
 }
 
 
