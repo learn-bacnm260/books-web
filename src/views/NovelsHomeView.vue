@@ -16,7 +16,7 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 
     <!-- <NovelsDescription class="description-container" /> -->
 
-    <div clas="novel-chapter-update">
+    <div class="novel-chapter-update">
       <NovelsHomeUpdateList />
     </div>
 
@@ -42,7 +42,7 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 }
 
 .history-container {
-  height: 700px;
+  height: 500px;
   max-width: 90%;
   overflow: hidden;
   display: flex;
@@ -53,33 +53,11 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 
 }
 
-.history-container h1 {
-  margin: 40px 0 0 40px;
-  padding: 0;
-  font-size: 32px;
-  font-weight: bold;
-}
+.novel-chapter-update {
+  width: 90%;
+  height: 500px;
 
-.history-list {
-  height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.description-container {
-  height: 350px;
-  max-width: 50%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: flex-start;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (max-width: 930px) {
-  .description-container {
-    display: none;
-  }
-
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 </style>
