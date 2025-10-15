@@ -1,116 +1,152 @@
+``
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
+
+import nav_menu from '@/assets/mock-data/json/NavMenu.json';
+import NovelsNavItem from '@/components/novels/NovelsNavItem.vue';
+
+
+const backgroundLightColor = '#FFFFFF';
+const themeColor = ref(backgroundLightColor);
+
+
 
 </script>
 
 <template>
 
-  <div class="dashboard-layout">
+  <div class="novels-layout">
 
-    <header class="dashboard-header">
+    <header class="novels-layout-header">
 
-      <div class="menu-nav">
+      <div class="main-logo">
         <RouterLink to="/">
           <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          Books
-        </RouterLink>
-        <RouterLink to="/">
-          <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          Mangas
-        </RouterLink>
-        <RouterLink to="/">
-          <!-- <img alt="Books logo" class="logo" src="@/assets/logo/manga.png" /> -->
-          Novels
+          <img alt="Books logo" class="logo-img" src="@/assets/logos/book.png" />
         </RouterLink>
       </div>
 
-      <div class="tool-bar">
-        <input class="search-input" type="text" placeholder="Search..." />
-        <button class="button-search">
-          <img alt="Search icon" class="icon" src="@/assets/icons/search-icon.svg" />
-        </button>
+      <ul class="menu-nav">
+        <NovelsNavItem v-for="item in nav_menu" :key="item.name" :item="item" class="navItem" />
+      </ul>
 
-        <button class="button-user-profile">
-          <img alt="User profile icon" class="icon" src="@/assets/icons/user-profile-icon.svg" />
-        </button>
-        <button class="button-settings">
-          <img alt="Settings icon" class="icon" src="@/assets/icons/settings-icon.svg" />
-        </button>
-      </div>
+      <input class="search-input" type="text" placeholder="Search..." />
+
+      <button class="button-search">
+        <img alt="Search icon" class="icon" src="@/assets/icons/search-icon.svg" />
+      </button>
+
+      <button class="button-user-profile">
+        <img alt="User profile icon" class="icon" src="@/assets/icons/user-profile-icon.svg" />
+      </button>
+
+      <button class="button-settings">
+        <img alt="Settings icon" class="icon" src="@/assets/icons/settings-icon.svg" />
+      </button>
 
     </header>
 
-    <main class="dashboard-main">
+    <main class="novels-layout-main">
       <RouterView />
     </main>
+
+    <footer>
+      <h2>© 2025 Books. All rights reserved.</h2>
+    </footer>
 
   </div>
 
 </template>
 
 <style lang="css" scoped>
-.dashboard-layout {
-  height: 100%;
-  width: 100%;
-  background-color: #f7f3e8FF;
-  ;
-
-  display: grid;
-  grid-template-rows: 2fr 18fr;
-  grid-template-columns: 1fr;
-
-  border-radius: 10px;
-  overflow: hidden;
-  /* grid-template-areas: ; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.dashboard-header {
-  width: 100%;
+.novels-layout {
   height: 100%;
+  width: 100%;
+  background-color: v-bind(themeColor);
+  border-radius: 10px;
+  overflow: hidden;
 
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+}
+
+
+.novels-layout-header {
+  width: 100%;
+  height: 64px;
+  padding: 5px 10px;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+
   align-items: center;
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
+}
 
+
+.main-logo {
+
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+
+  transition: all 0.2s ease-in-out;
+
+}
+
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .menu-nav {
-  width: 100%;
 
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  margin-left: 40px;
+  padding: 0 10px;
+  box-sizing: inherit;
+
+  display: flex;
   flex: 1;
-  display: flex;
+
   flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: stretch;
-  background-color: #202636FF;
-}
-
-.menu-nav a {
-  display: flex;
-  color: white;
-  font-size: 1.2em;
-  padding: 10px;
-
-}
-
-.tool-bar {
-  width: 100%;
-
-  display: grid;
-  grid-template-columns: 1fr 2fr min-content min-content;
-  grid-template-rows: 1fr;
+  justify-content: flex-start;
   align-items: center;
+  column-gap: 20px;
+
 
 }
 
+.navItem {
+  transition: all 0.2s ease-in-out;
+}
 
-.tool-bar .search-input {
-  height: 30px;
+.navItem:hover {
+  height: 100%;
+
+  border-radius: 5px;
+  border-bottom: 1px solid gray;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+
+}
+
+.search-input {
+  height: 50px;
+  width: 30%;
   margin-left: 10px;
   margin-right: 10px;
   padding-left: 20px;
@@ -118,46 +154,54 @@ import { RouterLink } from 'vue-router';
   border: solid 0.5px gray;
   outline: none;
   box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 22px;
+  transition: all 0.2s ease-in-out;
 }
 
-.tool-bar button {
+.search-input:focus {
+  border: solid 1px #555;
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  transform: scale(1.1) translateX(-10px);
+}
 
-  height: 40px;
+button {
+
+  height: 70%;
   aspect-ratio: 1 / 1;
 
   margin: 5px;
   margin-right: 10px;
+  padding: 1px 6px;
   border-radius: 50%;
   border: solid 0.5px gray;
 
   background-color: rgb(226, 228, 236);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
+  transition: all 0.2s ease-in-out;
 }
 
-.tool-bar .button-search {
-  height: 30px;
+button:hover {
+  background-color: rgb(200, 200, 200);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(1.4);
+}
+
+footer {
+  text-align: center;
 }
 
 
-
-
-.dashboard-main {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  padding: 50px;
+.novels-layout-main {
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
-
-
-@media screen and (max-width: 400px) {
-  .tool-bar {
-    grid-template-columns: 1fr min-content min-content;
-  }
-
-  .tool-bar .search-input {
-    display: none;
-  }
-
+.main-logo:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
 }
 </style>

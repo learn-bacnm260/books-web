@@ -1,5 +1,7 @@
 <script setup>
-import NovelsDescription from '@/components/novels/NovelsDescription.vue';
+import NovelsHomeCategories from '@/components/novels/NovelsHomeCategories.vue';
+import NovelsHomeHistory from '@/components/novels/NovelsHomeHistory.vue';
+import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 
 </script>
 
@@ -8,56 +10,53 @@ import NovelsDescription from '@/components/novels/NovelsDescription.vue';
   <div class="novels-home-view">
 
     <div class="history-container">
-      <h2>History</h2>
-
-      <ul class="history-list">
-        <li class="history-item" v-for="n in 10" :key="n">Novel {{ n }}</li>
-      </ul>
-
+      <NovelsHomeHistory class="history-list" />
     </div>
 
-    <NovelsDescription class="description-container" />
+    <!-- <NovelsDescription class="description-container" /> -->
+
+    <div class="novel-chapter-update">
+      <NovelsHomeUpdateList />
+    </div>
+
+    <div class="novel-categories">
+      <NovelsHomeCategories />
+    </div>
 
   </div>
-
 </template>
 
 <style lang="css" scoped>
 .novels-home-view {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   align-items: center;
 
   padding: 20px;
   box-sizing: border-box;
 }
 
-.history-list {
-  height: 400px;
-  width: 100%;
+.history-container {
+  height: 500px;
+  max-width: 90%;
+  overflow: hidden;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+
+  border-radius: 10px;
+  border: 1px solid #ccc;
+
 }
 
-.description-container {
-  height: 250px;
-  max-width: 50%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: flex-start;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-}
+.novel-chapter-update {
+  width: 90%;
+  height: 500px;
 
-@media screen and (max-width: 930px) {
-  .description-container {
-    display: none;
-  }
-
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 </style>

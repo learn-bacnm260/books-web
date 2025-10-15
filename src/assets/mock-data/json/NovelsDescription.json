@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "url": "src/assets/mock-data/cover/300 (1).jpg",
+    "timestamp": "2023-10-01T10:00:00Z",
+    "title": "Novel Title 1",
+    "chapter": 50,
+    "lastChapter": 50,
+    "readChapter": 45,
+    "author": "Author A"
+  },
+  {
+    "id": 2,
+    "url": "src/assets/mock-data/cover/300 (2).jpg",
+    "timestamp": "2023-10-02T12:00:00Z",
+    "title": "Novel Title 2",
+    "chapter": 10,
+    "lastChapter": 10,
+    "readChapter": 5,
+    "author": "Author B"
+  },
+  {
+    "id": 3,
+    "url": "src/assets/mock-data/cover/300 (3).jpg",
+    "timestamp": "2023-10-03T14:00:00Z",
+    "title": "Novel Title 3",
+    "chapter": 14,
+    "lastChapter": 14,
+    "readChapter": 5,
+    "author": "Author C"
+  },
+  {
+    "id": 4,
+    "url": "src/assets/mock-data/cover/300 (4).jpg",
+    "timestamp": "2023-10-04T16:00:00Z",
+    "title": "Novel Title 4",
+    "chapter": 130,
+    "lastChapter": 130,
+    "readChapter": 59,
+    "author": "Author D"
+  },
+  {
+    "id": 5,
+    "url": "src/assets/mock-data/cover/300 (5).jpg",
+    "timestamp": "2023-10-05T18:00:00Z",
+    "title": "Novel Title 5",
+    "chapter": 110,
+    "lastChapter": 110,
+    "readChapter": 52,
+    "author": "Author E"
+  },
+  {
+    "id": 6,
+    "url": "src/assets/mock-data/cover/300 (6).jpg",
+    "timestamp": "2023-10-06T20:00:00Z",
+    "title": "Novel Title 6",
+    "chapter": 180,
+    "lastChapter": 180,
+    "readChapter": 35,
+    "author": "Author F"
+  },
+  {
+    "id": 7,
+    "url": "src/assets/mock-data/cover/300 (7).jpg",
+    "timestamp": "2023-10-07T22:00:00Z",
+    "title": "Novel Title 7",
+    "chapter": 120,
+    "lastChapter": 120,
+    "readChapter": 85,
+    "author": "Author G"
+  },
+  {
+    "id": 8,
+    "url": "src/assets/mock-data/cover/300 (8).jpg",
+    "timestamp": "2023-10-08T23:00:00Z",
+    "title": "Novel Title 8",
+    "chapter": 1220,
+    "lastChapter": 1220,
+    "readChapter": 335,
+    "author": "Author H"
+  },
+  {
+    "id": 9,
+    "url": "src/assets/mock-data/cover/300 (9).jpg",
+    "timestamp": "2023-10-09T09:00:00Z",
+    "title": "Novel Title 9",
+    "chapter": 210,
+    "lastChapter": 210,
+    "readChapter": 75,
+    "author": "Author I"
+  },
+  {
+    "id": 10,
+    "url": "src/assets/mock-data/cover/300 (10).jpg",
+    "timestamp": "2023-10-10T11:00:00Z",
+    "title": "Novel Title 10",
+    "chapter": 1000,
+    "lastChapter": 1000,
+    "readChapter": 500,
+    "author": "Author J"
+  }
+]
