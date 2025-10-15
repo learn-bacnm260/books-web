@@ -1,20 +1,7 @@
 <script setup>
 
-import { ref } from 'vue';
-
-const listItems = ref([
-  { id: 1, url: 'src/assets/mock-data/cover/300 (1).jpg' },
-  { id: 2, url: 'src/assets/mock-data/cover/300 (2).jpg' },
-  { id: 3, url: 'src/assets/mock-data/cover/300 (3).jpg' },
-  { id: 4, url: 'src/assets/mock-data/cover/300 (4).jpg' },
-  { id: 5, url: 'src/assets/mock-data/cover/300 (5).jpg' },
-  { id: 6, url: 'src/assets/mock-data/cover/300 (6).jpg' },
-  { id: 7, url: 'src/assets/mock-data/cover/300 (7).jpg' },
-  { id: 8, url: 'src/assets/mock-data/cover/300 (8).jpg' },
-  { id: 9, url: 'src/assets/mock-data/cover/300 (9).jpg' },
-  { id: 10, url: 'src/assets/mock-data/cover/300 (10).jpg' },
-
-]);
+import listItems from '@/assets/mock-data/json/NovelsDescription.json';
+console.log(listItems);
 
 </script>
 
