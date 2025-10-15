@@ -10,7 +10,7 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
   <div class="novels-home-view">
 
     <div class="history-container">
-      <NovelsHomeHistory class="history-list" />
+      <NovelsHomeHistory />
     </div>
 
     <!-- <NovelsDescription class="description-container" /> -->
@@ -36,7 +36,7 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
   gap: 40px;
   align-items: center;
 
-  padding: 20px;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
@@ -44,8 +44,7 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
   height: 500px;
   max-width: 90%;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+
 
   border-radius: 10px;
   border: 1px solid #ccc;
