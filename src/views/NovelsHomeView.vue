@@ -27,6 +27,12 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 </template>
 
 <style lang="css" scoped>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .novels-home-view {
   min-height: 100%;
   width: 100%;
@@ -57,5 +63,17 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 
   border-radius: 10px;
   border: 1px solid #ccc;
+}
+
+
+.novel-categories {
+
+  width: 90%;
+  height: 800px;
+  padding: 0px 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+
 }
 </style>
