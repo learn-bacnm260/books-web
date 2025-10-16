@@ -60,6 +60,12 @@ const themeColor = ref(backgroundLightColor);
 </template>
 
 <style lang="css" scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .novels-layout {
   height: 100%;
   width: 100%;
@@ -119,7 +125,7 @@ const themeColor = ref(backgroundLightColor);
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 40px;
+  column-gap: 20px;
 
 
 }
@@ -149,14 +155,14 @@ const themeColor = ref(backgroundLightColor);
   outline: none;
   box-sizing: border-box;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  font-size: 24px;
+  font-size: 22px;
   transition: all 0.2s ease-in-out;
 }
 
 .search-input:focus {
   border: solid 1px #555;
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  transform: scale(1.1) translateX(-30px);
+  transform: scale(1.1) translateX(-10px);
 }
 
 button {
@@ -166,6 +172,7 @@ button {
 
   margin: 5px;
   margin-right: 10px;
+  padding: 1px 6px;
   border-radius: 50%;
   border: solid 0.5px gray;
 

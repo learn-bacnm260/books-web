@@ -128,7 +128,7 @@ li {
   column-gap: 5px;
   align-items: center;
   justify-content: flex-start;
-  z-index: 1;
+  z-index: 10;
 
   font-size: 24px;
   /* Giảm cỡ chữ để trông hiện đại hơn */
@@ -228,7 +228,7 @@ button:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 10;
+  z-index: 100;
 
 }
 
