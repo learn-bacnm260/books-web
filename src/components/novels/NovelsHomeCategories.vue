@@ -14,7 +14,7 @@ import novel_description from '@/assets/mock-data/json/NovelsDescription.json'
     <div class="categories-content">
       <NovelsHomeCategoriesBlock class='category-block' :items="novel_description" />
       <NovelsHomeCategoriesBlock class='category-block' :items="novel_description" />
-      <!-- <NovelsHomeCategoriesBlock class='category-block' :items="novel_description" /> -->
+      <NovelsHomeCategoriesBlock class='category-block' :items="novel_description" />
 
     </div>
   </div>
@@ -24,6 +24,8 @@ import novel_description from '@/assets/mock-data/json/NovelsDescription.json'
 .novels-category-list {
   display: flex;
   flex-flow: column nowrap;
+  height: 100%;
+  flex: 1;
 }
 
 .categories-header {
@@ -35,6 +37,8 @@ import novel_description from '@/assets/mock-data/json/NovelsDescription.json'
 
 .categories-header h2 {
   margin: 20px 20px 10px;
+  border-radius: 10px;
+  border-bottom: 2px solid #ccc;
 }
 
 .categories-header a {
@@ -43,13 +47,14 @@ import novel_description from '@/assets/mock-data/json/NovelsDescription.json'
 
 .categories-content {
 
-  padding: 10px 20px;
-  flex: 1;
+  height: 100%;
+  min-height: 0;
   overflow: hidden;
+  flex: 1;
+
   display: flex;
   flex-flow: row nowrap;
-  column-gap: 10px;
-  align-items: center;
+  align-items: stretch;
   column-gap: 20px;
   justify-content: center;
 
@@ -58,6 +63,8 @@ import novel_description from '@/assets/mock-data/json/NovelsDescription.json'
 .category-block {
   border: 1px solid #ccc;
   border-radius: 10px;
+  height: 100%;
   flex: 1;
+  min-height: 0;
 }
 </style>

@@ -48,7 +48,7 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 
 .history-container {
   height: 500px;
-  max-width: 90%;
+  width: 90%;
   overflow: hidden;
 
 
@@ -70,7 +70,7 @@ import NovelsHomeUpdateList from '@/components/novels/NovelsHomeUpdateList.vue';
 
   width: 90%;
   height: 800px;
-  padding: 0px 20px;
+  padding: 0px 20px 20px;
   border-radius: 10px;
   border: 1px solid #ccc;
   overflow: hidden;
