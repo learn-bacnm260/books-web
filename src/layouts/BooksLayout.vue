@@ -137,21 +137,4 @@ import { RouterLink } from 'vue-router';
   padding: 20px;
   overflow-y: auto;
 }
-
-/* a img {
-  width: 20%;
-  height: 20%;
-} */
-
-
-@media screen and (max-width: 400px) {
-  .tool-bar {
-    grid-template-columns: 1fr min-content min-content;
-  }
-
-  .tool-bar .search-input {
-    display: none;
-  }
-
-}
 </style>

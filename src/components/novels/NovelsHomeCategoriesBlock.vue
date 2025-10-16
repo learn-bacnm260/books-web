@@ -84,7 +84,7 @@ defineProps({
 }
 
 .category-item:hover {
-  background-color: rgba(218, 218, 226, 0.5);
+  background-color: rgb(233, 233, 233, 0.8);
 }
 
 .category-item a {

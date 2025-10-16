@@ -69,8 +69,13 @@ onMounted(() => {
 }
 
 .novels-history>h2 {
+
+  width: fit-content;
+
   padding: 0;
-  margin: 20px 20px 10px 20px;
+  margin: 20px 20px 10px;
+  border-radius: 10px;
+  border-bottom: 2px solid #ccc;
 }
 
 
