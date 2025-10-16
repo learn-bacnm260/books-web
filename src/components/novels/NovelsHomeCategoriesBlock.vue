@@ -91,6 +91,7 @@ defineProps({
   height: 100%;
   text-decoration: none;
 
+
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -102,6 +103,9 @@ defineProps({
   border-radius: 10px;
   aspect-ratio: 2 / 3;
   overflow: hidden;
+
+  flex-shrink: 0;
+  /* không cho phép co lại để vừa với text quá dài */
 }
 
 .img-container img {
@@ -115,8 +119,11 @@ a .title {
   font-size: 16px;
   text-decoration: none;
   color: black;
-  line-clamp: 1;
+  line-clamp: 0;
+
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 
 }
 </style>
