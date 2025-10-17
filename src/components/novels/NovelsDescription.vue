@@ -1,4 +1,15 @@
 <script setup>
+
+defineProps(
+  {
+    novel: {
+      requied: true,
+      type: Object
+
+    }
+  }
+)
+
 </script>
 
 <template>
@@ -7,18 +18,16 @@
       <img alt="Novel cover" class="novel-cover" src="@/assets/mock-data/example.png" />
     </div>
     <div class="description-content">
-      <h3 class="title">Novel Title</h3>
-      <h4 class="author">Author Name</h4>
+      <h3 class="title">{{ novel.title }}</h3>
+      <h4 class="author">{{ novel.author }}</h4>
       <p class="description">
-        This is a brief description of the novel. It provides an overview of the plot, characters, and setting to
-        entice readers to explore further.
-        1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+        {{ novel.description }}
       </p>
 
       <div class="novel-status-block">
-        <span class="chapters">Chapters: 20000</span>
-        <span class="status">Status: Completed</span>
-        <span class="progess">Progress: 15555/20000</span>
+        <span class="chapters">Chapters: {{ novel.chapters }}</span>
+        <span class="status">Status: {{ novel.status }}</span>
+        <span class="progess">Progress: {{ novel.readChapter }}/{{ novel.chapters }}</span>
       </div>
 
     </div>

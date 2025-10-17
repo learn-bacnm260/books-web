@@ -20,7 +20,7 @@ defineProps({
       <div v-for="item in items" class='category-item' :key="item.id">
         <a href="https://google.com">
           <div class="img-container">
-            <img :src="item.url" />
+            <img :src="item.img_url" />
           </div>
           <div class="title">
             {{ item.title ?? "Undefined" }}

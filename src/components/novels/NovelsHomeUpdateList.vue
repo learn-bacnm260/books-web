@@ -40,7 +40,7 @@ const item = ref(null);
 
 .update-list-component {
 
-
+  box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;

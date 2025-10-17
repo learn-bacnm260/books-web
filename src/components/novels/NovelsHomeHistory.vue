@@ -49,7 +49,7 @@ onMounted(() => {
 
     <div class="novel-list" ref="novelListContainer">
       <div class=" novel-cover-container" v-for="item in listItems" :key="item.id">
-        <img :src="item.url" :alt="`Novel Cover ${item.id}`" class="novel-cover" />
+        <img :src="item.img_url" :alt="`Novel Cover ${item.id}`" class="novel-cover" />
       </div>
     </div>
   </div>
