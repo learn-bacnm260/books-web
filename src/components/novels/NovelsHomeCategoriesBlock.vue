@@ -1,12 +1,32 @@
 <script setup>
-import { defineProps } from 'vue';
+import { ref, defineProps } from 'vue';
+import NovelDescriptionToolTip from './NovelDescriptionToolTip.vue';
 
+import NovelsDescription from './NovelsDescription.vue';
 defineProps({
   items: {
     required: true,
     type: Array
   }
 })
+
+
+
+const currentItem = ref(null);
+const showTooltip = ref(false);
+const mouseX = ref(0);
+const mouseY = ref(0);
+function handleMouseEnter(e, item) {
+  showTooltip.value = true;
+  currentItem.value = item;
+
+  mouseX.value = e.clientX + 10; // lệch sang phải 10px
+  mouseY.value = e.clientY + 10; // lệch xuống 10px
+}
+function handleMouseLeave() {
+  showTooltip.value = false;
+
+}
 
 </script>
 <template>
@@ -18,7 +38,8 @@ defineProps({
 
     <div class="category-container">
       <div v-for="item in items" class='category-item' :key="item.id">
-        <a href="https://google.com">
+        <a href="https://google.com" @mouseenter="e => handleMouseEnter(e, item)"
+          @mousemove="e => handleMouseEnter(e, item)" @mouseleave="handleMouseLeave">
           <div class="img-container">
             <img :src="item.img_url" />
           </div>
@@ -26,6 +47,9 @@ defineProps({
             {{ item.title ?? "Undefined" }}
           </div>
         </a>
+        <NovelDescriptionToolTip v-show="currentItem" :x="mouseX" :y="mouseY" :visible="showTooltip">
+          <NovelsDescription :novel="currentItem" />
+        </NovelDescriptionToolTip>
       </div>
     </div>
   </div>
