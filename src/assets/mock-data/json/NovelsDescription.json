@@ -1,102 +1,132 @@
 [
   {
     "id": 1,
-    "url": "src/assets/mock-data/cover/300 (1).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (1).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-01T10:00:00Z",
     "title": "Novel Title 1 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
-    "chapter": 50,
+    "chapters": 50,
     "lastChapter": 50,
     "readChapter": 45,
-    "author": "Author A"
+    "author": "Author A",
+    "status": "Ongoing"
   },
   {
     "id": 2,
-    "url": "src/assets/mock-data/cover/300 (2).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (2).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-02T12:00:00Z",
     "title": "Novel Title 2",
-    "chapter": 10,
+    "chapters": 10,
     "lastChapter": 10,
     "readChapter": 5,
-    "author": "Author B"
+    "author": "Author B",
+    "status": "Ongoing"
   },
   {
     "id": 3,
-    "url": "src/assets/mock-data/cover/300 (3).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (3).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-03T14:00:00Z",
     "title": "Novel Title 3",
-    "chapter": 14,
+    "chapters": 14,
     "lastChapter": 14,
     "readChapter": 5,
-    "author": "Author C"
+    "author": "Author C",
+    "status": "Ongoing"
   },
   {
     "id": 4,
-    "url": "src/assets/mock-data/cover/300 (4).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (4).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-04T16:00:00Z",
     "title": "Novel Title 4",
-    "chapter": 130,
+    "chapters": 130,
     "lastChapter": 130,
     "readChapter": 59,
-    "author": "Author D"
+    "author": "Author D",
+    "status": "Ongoing"
   },
   {
     "id": 5,
-    "url": "src/assets/mock-data/cover/300 (5).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (5).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-05T18:00:00Z",
     "title": "Novel Title 5",
-    "chapter": 110,
+    "chapters": 110,
     "lastChapter": 110,
     "readChapter": 52,
-    "author": "Author E"
+    "author": "Author E",
+    "status": "Ongoing"
   },
   {
     "id": 6,
-    "url": "src/assets/mock-data/cover/300 (6).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (6).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-06T20:00:00Z",
     "title": "Novel Title 6",
-    "chapter": 180,
+    "chapters": 180,
     "lastChapter": 18099,
     "readChapter": 2235,
-    "author": "Author F"
+    "author": "Author F",
+    "status": "Ongoing"
   },
   {
     "id": 7,
-    "url": "src/assets/mock-data/cover/300 (7).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (7).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-07T22:00:00Z",
     "title": "Novel Title 7",
-    "chapter": 120,
+    "chapters": 120,
     "lastChapter": 120,
     "readChapter": 85,
-    "author": "Author G"
+    "author": "Author G",
+    "status": "Ongoing"
   },
   {
     "id": 8,
-    "url": "src/assets/mock-data/cover/300 (8).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (8).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-08T23:00:00Z",
     "title": "Novel Title 8",
-    "chapter": 1220,
+    "chapters": 1220,
     "lastChapter": 1220,
     "readChapter": 335,
-    "author": "Author H"
+    "author": "Author H",
+    "status": "Ongoing"
   },
   {
     "id": 9,
-    "url": "src/assets/mock-data/cover/300 (9).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (9).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-09T09:00:00Z",
     "title": "Novel Title 9",
-    "chapter": 210,
+    "chapters": 210,
     "lastChapter": 210,
     "readChapter": 75,
-    "author": "Author I"
+    "author": "Author I",
+    "status": "Ongoing"
   },
   {
     "id": 10,
-    "url": "src/assets/mock-data/cover/300 (10).jpg",
+    "novel_url": "https://google.com",
+    "img_url": "src/assets/mock-data/cover/300 (10).jpg",
+    "description": "This is an example description for novel",
     "timestamp": "2023-10-10T11:00:00Z",
     "title": "Novel Title 10",
-    "chapter": 1000,
+    "chapters": 1000,
     "lastChapter": 1000,
     "readChapter": 500,
-    "author": "Author J"
+    "author": "Author J",
+    "status": "Ongoing"
   }
 ]
