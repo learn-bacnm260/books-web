@@ -60,7 +60,7 @@ defineProps(
   background-color: #ffffff;
 
   box-shadow: 0px 0px 4px #ccc;
-
+  position: inherit;
 }
 
 .img-container {
@@ -87,7 +87,12 @@ defineProps(
 
 .title {
   font-size: 18px;
-
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .author {
