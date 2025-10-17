@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import NovelsLayout from '@/layouts/NovelsLayout.vue'
 import BooksLayout from '@/layouts/BooksLayout.vue'
 import NovelsHomeView from '@/views/NovelsHomeView.vue'
+import NovelsDescription from '@/components/novels/NovelsDescription.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,7 +11,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: BooksLayout,
-      childen: [],
+      children: [],
     },
     {
       path: '/novels',
@@ -28,6 +29,11 @@ const router = createRouter({
           },
         },
       ],
+    },
+    {
+      path: '/test',
+      name: 'test-component',
+      component: NovelsDescription,
     },
   ],
 })
