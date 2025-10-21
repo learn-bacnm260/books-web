@@ -28,7 +28,7 @@ const themeColor = ref(backgroundLightColor);
       </div>
 
       <ul class="menu-nav">
-        <NovelsNavItem v-for="item in nav_menu" :key="item.name" :item="item" class="navItem" />
+        <NovelsNavItem v-for="item in nav_menu" :key="item.path" :item="item" class="navItem" />
       </ul>
 
       <input class="search-input" type="text" placeholder="Search..." />

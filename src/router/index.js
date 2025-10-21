@@ -28,6 +28,11 @@ const router = createRouter({
             default: NovelsHomeView,
           },
         },
+        {
+          path: ':novel_id',
+          name: 'novel-information',
+          component: () => import('@/views/NovelProfileView.vue'),
+        },
       ],
     },
     {
